@@ -1,20 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBackground"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainActivity"
+    tools:context=".activities.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <include layout="@layout/toolbar" />
 
-</android.support.constraint.ConstraintLayout>
+    <!--主界面Fragment容器-->
+    <FrameLayout
+        android:id="@+id/fl_tab_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="34dp"
+        android:layout_marginTop="?attr/actionBarSize">
+
+
+    </FrameLayout>
+
+    <!--底部导航栏-->
+    <LinearLayout
+        android:id="@+id/nav_bar_home_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginBottom="2dp"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tab_home_page"
+            style="@style/TabMenu"
+            android:drawableTop="@drawable/tab_menu_home" />
+
+        <TextView
+            android:id="@+id/tab_train"
+            style="@style/TabMenu"
+            android:drawableTop="@drawable/tab_menu_trainer" />
+
+    </LinearLayout>
+
+</FrameLayout>
